@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_movie_db_app/layers/presentation/features/movie/movie_page.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -8,15 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Material App Bar'),
-        ),
-        body: const Center(
-          child: Text('Hello World'),
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Movie Db App',
+      home: MoviePage(),
     );
   }
 }
