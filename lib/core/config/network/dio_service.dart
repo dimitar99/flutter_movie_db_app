@@ -9,8 +9,7 @@ class DioService {
       baseUrl: Environment.baseUrl,
       connectTimeout: const Duration(seconds: 20),
       receiveTimeout: const Duration(seconds: 20),
-      sendTimeout: const Duration(seconds: 15),
-      contentType: 'application/json',
+      sendTimeout: const Duration(seconds: 20),
     ),
   )..interceptors.addAll([AuthInterceptor(), LoggerInterceptor()]);
 }

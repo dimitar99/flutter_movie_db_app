@@ -17,7 +17,7 @@ class LoggerInterceptor implements Interceptor {
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
-    log('[DioResponse] - [${response.statusCode}] ${response.statusMessage} - ${response.data}');
+    // log('[DioResponse] - [${response.statusCode}] ${response.statusMessage} - ${response.data}');
     handler.next(response);
   }
 }

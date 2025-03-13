@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_movie_db_app/layers/presentation/features/movie/movie_page.dart';
+import 'package:flutter_movie_db_app/di/dependency_injection.dart';
+import 'package:flutter_movie_db_app/layers/presentation/features/popular_movies/popular_movies_page.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  configureDependencies();
+  runApp(ProviderScope(child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -11,10 +14,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Movie Db App',
-      home: MoviePage(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, title: 'Flutter Movie Db App', home: MoviePage());
   }
 }
