@@ -31,21 +31,23 @@ dependencies:
   bloc: ^9.0.0
   cupertino_icons: ^1.0.8
   dio: ^5.8.0+1
+  faker: ^2.2.0
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.6.1
   flutter_secure_storage: ^9.2.4
   get_it: ^8.0.3
   injectable: ^2.5.0
+  mocktail: ^1.0.4
   multiple_result: ^5.1.0
   riverpod: ^2.6.1
 
 dev_dependencies:
+  build_runner: null
   flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
   injectable_generator: null
-  build_runner: null
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

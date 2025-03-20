@@ -1,5 +1,5 @@
 import 'package:flutter_movie_db_app/layers/data/datasource/movie/source/movie_remote_data_source.dart';
-import 'package:flutter_movie_db_app/layers/domain/entity/credits_entity.dart';
+import 'package:flutter_movie_db_app/layers/domain/entity/movie_credits_entity.dart';
 import 'package:flutter_movie_db_app/layers/domain/entity/movie_entity.dart';
 import 'package:flutter_movie_db_app/layers/domain/repository/movie/movie_repository.dart';
 import 'package:injectable/injectable.dart';
@@ -26,7 +26,7 @@ class MovieRepositoryImpl implements MovieRepository {
   }
 
   @override
-  Future<Result<List<CreditEntity>, Exception>> getMovieCredits({required int movieId}) async {
+  Future<Result<List<MovieCreditEntity>, Exception>> getMovieCredits({required int movieId}) async {
     final resp = await _movieRemoteDataSource.getMovieCredits(movieId: movieId);
 
     return resp.when(
