@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 class MovieEntity {
     bool adult;
     String backdropPath;
@@ -64,4 +66,43 @@ class MovieEntity {
         "vote_average": voteAverage,
         "vote_count": voteCount,
     };
+
+  @override
+  bool operator ==(covariant MovieEntity other) {
+    if (identical(this, other)) return true;
+  
+    return 
+      other.adult == adult &&
+      other.backdropPath == backdropPath &&
+      listEquals(other.genreIds, genreIds) &&
+      other.id == id &&
+      other.originalLanguage == originalLanguage &&
+      other.originalTitle == originalTitle &&
+      other.overview == overview &&
+      other.popularity == popularity &&
+      other.posterPath == posterPath &&
+      other.releaseDate == releaseDate &&
+      other.title == title &&
+      other.video == video &&
+      other.voteAverage == voteAverage &&
+      other.voteCount == voteCount;
+  }
+
+  @override
+  int get hashCode {
+    return adult.hashCode ^
+      backdropPath.hashCode ^
+      genreIds.hashCode ^
+      id.hashCode ^
+      originalLanguage.hashCode ^
+      originalTitle.hashCode ^
+      overview.hashCode ^
+      popularity.hashCode ^
+      posterPath.hashCode ^
+      releaseDate.hashCode ^
+      title.hashCode ^
+      video.hashCode ^
+      voteAverage.hashCode ^
+      voteCount.hashCode;
+  }
 }

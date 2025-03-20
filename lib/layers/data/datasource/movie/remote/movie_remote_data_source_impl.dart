@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_movie_db_app/layers/data/datasource/movie/source/movie_remote_data_source.dart';
-import 'package:flutter_movie_db_app/layers/domain/entity/credits_entity.dart';
+import 'package:flutter_movie_db_app/layers/domain/entity/movie_credits_entity.dart';
 import 'package:flutter_movie_db_app/layers/domain/entity/movie_entity.dart';
 import 'package:multiple_result/multiple_result.dart';
 
@@ -26,12 +26,12 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
       return Error(Exception('No movies found'));
     } catch (e) {
       log(e.toString());
-      throw Exception('Error obtaing popular movies');
+      return Error(Exception('Error obtaing popular movies'));
     }
   }
 
   @override
-  Future<Result<List<CreditEntity>, Exception>> getMovieCredits({required int movieId}) async {
+  Future<Result<List<MovieCreditEntity>, Exception>> getMovieCredits({required int movieId}) async {
     try {
       Response resp = await _dio.get('/movie/$movieId/credits');
 
@@ -39,14 +39,14 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
         List results = resp.data['cast'];
 
         if (results.isNotEmpty) {
-          return Success(results.map((e) => CreditEntity.fromJson(e)).toList());
+          return Success(results.map((e) => MovieCreditEntity.fromJson(e)).toList());
         }
       }
 
       return Error(Exception('No credits found'));
     } catch (e) {
       log(e.toString());
-      throw Exception('Error obtaing movie credits');
+      return Error(Exception('Error obtaing movie credits'));
     }
   }
 }

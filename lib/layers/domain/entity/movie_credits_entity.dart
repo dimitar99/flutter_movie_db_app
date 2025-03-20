@@ -1,4 +1,4 @@
-class CreditEntity {
+class MovieCreditEntity {
   bool adult;
   int gender;
   int id;
@@ -12,7 +12,7 @@ class CreditEntity {
   String creditId;
   int order;
 
-  CreditEntity({
+  MovieCreditEntity({
     required this.adult,
     required this.gender,
     required this.id,
@@ -27,7 +27,7 @@ class CreditEntity {
     required this.order,
   });
 
-  factory CreditEntity.fromJson(Map<String, dynamic> json) => CreditEntity(
+  factory MovieCreditEntity.fromJson(Map<String, dynamic> json) => MovieCreditEntity(
     adult: json["adult"],
     gender: json["gender"],
     id: json["id"],
@@ -59,4 +59,39 @@ class CreditEntity {
     "credit_id": creditId,
     "order": order,
   };
+
+  @override
+  bool operator ==(covariant MovieCreditEntity other) {
+    if (identical(this, other)) return true;
+  
+    return 
+      other.adult == adult &&
+      other.gender == gender &&
+      other.id == id &&
+      other.knownForDepartment == knownForDepartment &&
+      other.name == name &&
+      other.originalName == originalName &&
+      other.popularity == popularity &&
+      other.profilePath == profilePath &&
+      other.castId == castId &&
+      other.character == character &&
+      other.creditId == creditId &&
+      other.order == order;
+  }
+
+  @override
+  int get hashCode {
+    return adult.hashCode ^
+      gender.hashCode ^
+      id.hashCode ^
+      knownForDepartment.hashCode ^
+      name.hashCode ^
+      originalName.hashCode ^
+      popularity.hashCode ^
+      profilePath.hashCode ^
+      castId.hashCode ^
+      character.hashCode ^
+      creditId.hashCode ^
+      order.hashCode;
+  }
 }
