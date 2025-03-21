@@ -1,0 +1,5 @@
+{
+    "ENV_NAME": "dev",
+    "BASE_URL": "https://api.themoviedb.org/3",
+    "API_TOKEN": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4NWVlMDI4NDg3N2RmMGI0YzEzNjE1NmQxYzc3MWNkOSIsIm5iZiI6MTYyNzM4OTE0Ny42Nywic3ViIjoiNjBmZmZjZGI3MzA0YjUwMDVjOTFmN2FjIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.snRbxrgzcsmSlClK2N8LumQaOhqCdfSkAEtC_uNlE0g"
+}
